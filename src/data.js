@@ -4,7 +4,7 @@ import {
   IoLogoFacebook,
   IoLogoGithub,
   IoLogoInstagram,
-  IoMdAddCircle,
+ 
   IoIosCheckmarkCircle,
   IoIosArrowRoundForward,
 } from 'react-icons/io';
@@ -46,21 +46,21 @@ export const hero = {
   title: 'Creative Home Simpify your Furniture',
   subtitle:
     'Do i have consent to record this meeting gain locaion, root-and-branch, review, nor game plan who’s the goto',
-  buttonText: 'Shop Now',
+  buttonText: 'Try Now',
 };
 
 export const stats = [
   {
-    value: '7',
+    value: '1',
     text: 'Year Experience',
   },
   {
-    value: '2',
+    value: '1',
     text: 'Opened in the country',
   },
   {
     value: '10k+',
-    text: 'Furniture sold',
+    text: 'Furniture ideas',
   },
   {
     value: '260+',
@@ -90,15 +90,15 @@ export const features = {
   ],
   feature2: {
     image: <Features2Img />,
-    title: 'The Best Furniture Manufacturer of your choice',
+    title: 'The Best Furniture of your choice',
     subtitle:
       'Furnitre power is a software as services for multiperpose business management system, expecially for them who are running two or more business exploree the future Furnitre power is a software as services.',
   },
 };
 
 export const newInStore = {
-  title: 'New In Store Now',
-  subtitle: 'Get the latest items immediately with promo prices',
+  title: 'New In Technology Now',
+  subtitle: 'Get the latest items immediately with this...',
   link: 'Check all',
   icon: <IoIosArrowRoundForward />,
   products: [

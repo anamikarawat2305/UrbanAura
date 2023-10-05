@@ -1,6 +1,7 @@
 import React from "react";
 
-import Logo from "../assets/img/logo.svg";
+//import Logo from "../assets/img/logo.svg";
+import UrbanAura from '../assets/img/urbanaura.png'
 import { footer } from "../data";
 
 const Footer = () => {
@@ -12,8 +13,8 @@ const Footer = () => {
         border-b border-opacity-75 border-gray-700 pb-7 lg:pb-14
         mb-14"
         >
-          <a className="mb-6 lg:mb-0" href="#">
-            <img src={Logo} alt="" />
+          <a href="#">
+            <img className="h-6 lg:h-8" src={UrbanAura} alt="UrbanAura" />UrbanAura
           </a>
 
           <div className="flex gap-x-4">
