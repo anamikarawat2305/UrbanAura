@@ -5,6 +5,9 @@ import Stats from "../components/Stats";
 
 const Hero = () => {
   const { title, subtitle, buttonText } = hero;
+  function handleClick() {
+    window.location.href='/demo'
+  }
   return (
     <section
       className="h-[850px] w-full bg-hero bg-right bg-cover
@@ -33,7 +36,7 @@ const Hero = () => {
         hover:bg-[rgba(255,255,255,0.5)]
         px-[35px] py-[9px] mb-[160px] text-xl 
         rounded-md backdrop-blur-md transition lg:px-[80px]
-        lg:py-[16px] lg:mb-[194px]"
+        lg:py-[16px] lg:mb-[194px]" onClick={handleClick}
         >
           {buttonText}
         </button>
