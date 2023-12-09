@@ -4,6 +4,7 @@ import { AdvancedImage, CloudinaryContext } from '@cloudinary/react';
 import MaskGallery from '../maskGallery';
 import upload from '../../assets/img/th.jpeg';
 import './style.css';
+import { border } from '@cloudinary/url-gen/qualifiers/background';
 
 const ImageUploadCard = () => {
   const [selectedImage, setSelectedImage] = useState("");
@@ -170,6 +171,28 @@ console.log(Images)
                 <div className="ImgCardContent">
                   <h3>Upload a Photo of Your Space</h3>
                   <p>You can upload images in the form of jpeg, png, and any other format.</p>
+                  <p>User Inputs</p>
+                  <form>
+                  Category:
+                    <select className="ml-12 mt-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded">
+                      <option selected value="Furnishing">Furnishing</option>
+                      <option value="Architectural">Architectural</option>
+                      <option value="Landscaping">Landscaping</option>
+                    </select><br/>
+                    <label>Color Preferences:
+                    <input type="text" className="ml-2 mt-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded"></input>
+                    </label><br/>
+                    <label>Landscape Preference:
+                    <input type="text" className="ml-2 mt-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded"></input>
+                    </label><br/>
+                    Image Generation:
+                    <select className="ml-12 mt-4 mb-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded">
+                      <option selected value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </form>
                   <div className="custom-file-upload">
                     <input type="file" accept=".jpeg, .jpg, .png" onChange={(e) => setSelectedImage(e.target.files[0])} />
                     <button onClick={submitImage}>Upload</button>
