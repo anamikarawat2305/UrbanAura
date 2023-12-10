@@ -38,7 +38,7 @@ const ImageUploadCard = () => {
         method: "post",
         body: data,
       });
-  
+  /// new key - 6560530d9ff051aa5eaa7d0d
       if (hostedImg.ok) {
         const url = await hostedImg.json();
         setimgUrl(url.secure_url);
