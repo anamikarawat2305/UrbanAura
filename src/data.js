@@ -37,8 +37,8 @@ export const navigation = [
     href: 'features',
   },
   {
-    name: 'contact',
-    href: 'contact',
+    name: 'testimonials',
+    href: 'testimonials',
   },
 ];
 

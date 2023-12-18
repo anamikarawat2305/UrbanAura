@@ -53,7 +53,7 @@ const ImageUploadCard = () => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'api-key': '6510758a22bf247c4a5d0ad0'
+            'api-key': '6560530d9ff051aa5eaa7d0d'
           },
           body: JSON.stringify({ image_url: url.secure_url }),
         });
@@ -73,7 +73,7 @@ const ImageUploadCard = () => {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
-                'api-key': '6510758a22bf247c4a5d0ad0'
+                'api-key': '6560530d9ff051aa5eaa7d0d'
               }
             });
             maskedImageData = await maskedImageResponse.json();
@@ -90,7 +90,7 @@ const ImageUploadCard = () => {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
-                  'api-key': '6510758a22bf247c4a5d0ad0'
+                  'api-key': '6560530d9ff051aa5eaa7d0d'
                 },
                 body: JSON.stringify({ 
                   image_url: url.secure_url,
@@ -120,7 +120,7 @@ const ImageUploadCard = () => {
                     method: 'GET',
                     headers: {
                       'Content-Type': 'application/json',
-                      'api-key': '6510758a22bf247c4a5d0ad0'
+                      'api-key': '6560530d9ff051aa5eaa7d0d'
                     }
                   });
                   const newimgGenerate = await imgGenerate.json();

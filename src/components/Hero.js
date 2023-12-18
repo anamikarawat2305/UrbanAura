@@ -9,7 +9,7 @@ const Hero = () => {
     window.location.href='/demo'
   }
   return (
-    <section
+    <section id="about"
       className="h-[850px] w-full bg-hero bg-right bg-cover
     bg-no-repeat text-white pt-[225px] pb-[254px] relative mb-12
     lg:bg-center lg:mb-28"
