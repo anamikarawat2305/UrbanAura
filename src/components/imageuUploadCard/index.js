@@ -18,7 +18,7 @@ const ImageUploadCard = () => {
   const [colorPreferences, setColorPreferences] = useState('');
   const [landscapePreference, setLandscapePreference] = useState('');
   const [imageGeneration, setImageGeneration] = useState(1);
-
+  
 
   function extractMaskUrls(masks) {
     if (Array.isArray(masks)) {
@@ -46,6 +46,7 @@ const ImageUploadCard = () => {
   /// new key - 6560530d9ff051aa5eaa7d0d
       if (hostedImg.ok) {
         const url = await hostedImg.json();
+        console.log(url.secure_url)
         setimgUrl(url.secure_url);
   
         // Step 2: Create a mask
