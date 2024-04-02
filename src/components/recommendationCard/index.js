@@ -49,6 +49,7 @@ const RecommendationCard = () => {
            
            //step 3 Text to Img. 
            //api key exhausted for text 2 img no more request will be entertained.
+           //test
            const options = {
             method: 'GET',
             headers: {
