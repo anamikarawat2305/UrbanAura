@@ -14,6 +14,10 @@ const ImageUploadCard = () => {
   const [showImageUpload, setshowImageUpload] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [Images, setImages] = useState([]);
+  const [category, setCategory] = useState('furnishing');
+  const [colorPreferences, setColorPreferences] = useState('');
+  const [landscapePreference, setLandscapePreference] = useState('');
+  const [imageGeneration, setImageGeneration] = useState(1);
 
 
   function extractMaskUrls(masks) {
@@ -39,7 +43,7 @@ const ImageUploadCard = () => {
         method: "post",
         body: data,
       });
-  
+  /// new key - 6560530d9ff051aa5eaa7d0d
       if (hostedImg.ok) {
         const url = await hostedImg.json();
         setimgUrl(url.secure_url);
@@ -49,7 +53,7 @@ const ImageUploadCard = () => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'api-key': '6510758a22bf247c4a5d0ad0'
+            'api-key': '6560530d9ff051aa5eaa7d0d'
           },
           body: JSON.stringify({ image_url: url.secure_url }),
         });
@@ -69,7 +73,7 @@ const ImageUploadCard = () => {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
-                'api-key': '6510758a22bf247c4a5d0ad0'
+                'api-key': '6560530d9ff051aa5eaa7d0d'
               }
             });
             maskedImageData = await maskedImageResponse.json();
@@ -86,19 +90,19 @@ const ImageUploadCard = () => {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
-                  'api-key': '6510758a22bf247c4a5d0ad0'
+                  'api-key': '6560530d9ff051aa5eaa7d0d'
                 },
                 body: JSON.stringify({ 
                   image_url: url.secure_url,
                   mask_urls: maskUrls,
-                  mask_category: "furnishing",
+                  mask_category: category,
                   space_type: "ST-INT-003",
                   design_theme: "DT-INT-008",
                   masking_element: "",
-                  color_preference: "green,yellow,black",
-                  material_preference: "",
-                  landscaping_preference: "",
-                  generation_count: 3,
+                  color_preference: colorPreferences,
+                  material_preference: "ceramic tile",
+                  landscaping_preference: landscapePreference,
+                  generation_count: parseInt(imageGeneration, 10),
                   additional_prompt: "blue color on wall"
                 }),
               });
@@ -116,7 +120,7 @@ const ImageUploadCard = () => {
                     method: 'GET',
                     headers: {
                       'Content-Type': 'application/json',
-                      'api-key': '6510758a22bf247c4a5d0ad0'
+                      'api-key': '6560530d9ff051aa5eaa7d0d'
                     }
                   });
                   const newimgGenerate = await imgGenerate.json();
@@ -171,26 +175,26 @@ console.log(Images)
                 <div className="ImgCardContent">
                   <h3>Upload a Photo of Your Space</h3>
                   <p>You can upload images in the form of jpeg, png, and any other format.</p>
-                  <p>User Inputs</p>
+                  {/* <p>User Inputs</p> */}
                   <form>
                   Category:
-                    <select className="ml-12 mt-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded">
-                      <option selected value="Furnishing">Furnishing</option>
-                      <option value="Architectural">Architectural</option>
-                      <option value="Landscaping">Landscaping</option>
+                    <select  value={category} onChange={(e) => setCategory(e.target.value)} className="ml-12 mt-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded">
+                      <option value="furnishing">Furnishing</option>
+                      <option value="architectural">Architectural</option>
+                      <option value="landscaping">Landscaping</option>
                     </select><br/>
                     <label>Color Preferences:
-                    <input type="text" className="ml-2 mt-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded"></input>
+                    <input type="text"  value={colorPreferences} onChange={(e) => setColorPreferences(e.target.value)} className="ml-2 mt-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded"></input>
                     </label><br/>
                     <label>Landscape Preference:
-                    <input type="text" className="ml-2 mt-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded"></input>
+                    <input type="text" value={landscapePreference} onChange={(e) => setLandscapePreference(e.target.value)} className="ml-2 mt-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded"></input>
                     </label><br/>
                     Image Generation:
-                    <select className="ml-12 mt-4 mb-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded">
-                      <option selected value="1">1</option>
+                    <select value={imageGeneration} onChange={(e) => setImageGeneration(e.target.value)} className="ml-12 mt-4 mb-4 w-60 border-dotted border-2 border-indigo-800 bg-#f7faff shadow rounded">
+                      <option  value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
-                      <option value="4">4</option>
+                      {/* <option value="4">4</option> */}
                     </select>
                   </form>
                   <div className="custom-file-upload">

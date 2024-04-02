@@ -37,13 +37,13 @@ export const navigation = [
     href: 'features',
   },
   {
-    name: 'contact',
-    href: 'contact',
+    name: 'testimonials',
+    href: 'testimonials',
   },
 ];
 
 export const hero = {
-  title: 'Creative Home Simpify your Furniture',
+  title: 'Creative Home Simplify your Furniture',
   subtitle:
     'Transform your space with UrbanAura: Where interior designing meets personalized perfection.',
   buttonText: 'Customize your space',
