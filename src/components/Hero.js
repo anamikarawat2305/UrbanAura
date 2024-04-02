@@ -4,9 +4,12 @@ import { hero } from "../data";
 import Stats from "../components/Stats";
 
 const Hero = () => {
-  const { title, subtitle, buttonText } = hero;
-  function handleClick() {
+  const { title, subtitle, buttonText,buttonText2 } = hero;
+  function handleDemoClick() {
     window.location.href='/demo'
+  }
+  function handleGnrtClick() {
+    window.location.href='/generate'
   }
   return (
     <section
@@ -34,11 +37,21 @@ const Hero = () => {
         <button
           className="bg-[rgba(255,255,255,0.4)]
         hover:bg-[rgba(255,255,255,0.5)]
-        px-[35px] py-[9px] mb-[160px] text-xl 
+        px-[35px] py-[9px] mb-[50px] text-xl 
         rounded-md backdrop-blur-md transition lg:px-[80px]
-        lg:py-[16px] lg:mb-[194px]" onClick={handleClick}
+        lg:py-[16px] lg:mb-[14px]" onClick={handleDemoClick}
         >
           {buttonText}
+        </button>
+        <br/>
+        <button
+          className="bg-[rgba(255,255,255,0.4)]
+        hover:bg-[rgba(255,255,255,0.5)]
+        px-[35px] py-[9px] mb-[160px] text-xl 
+        rounded-md backdrop-blur-md transition lg:px-[80px]
+        lg:py-[16px] lg:mb-[144px]" onClick={handleGnrtClick}
+        ><span className="absolute left-[-6px] top-[-13px] text-[20px]">&#10024;</span>
+          {buttonText2}
         </button>
         {/* stats */}
         <div>

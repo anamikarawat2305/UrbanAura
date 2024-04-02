@@ -45,8 +45,9 @@ export const navigation = [
 export const hero = {
   title: 'Creative Home Simpify your Furniture',
   subtitle:
-    'Do i have consent to record this meeting gain locaion, root-and-branch, review, nor game plan who’s the goto',
-  buttonText: 'Try Now',
+    'Transform your space with UrbanAura: Where interior designing meets personalized perfection.',
+  buttonText: 'Customize your space',
+  buttonText2: 'Try our new recommendation model',
 };
 
 export const stats = [
