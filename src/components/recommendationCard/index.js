@@ -44,6 +44,7 @@ const RecommendationCard = () => {
           });
           if (response.ok) {
             const data = await response.json();
+            console.log(data.result)
             setrecommendations(data.result)
            
            
@@ -53,15 +54,16 @@ const RecommendationCard = () => {
            const options = {
             method: 'GET',
             headers: {
-              'X-RapidAPI-Key': '4afad4a32bmsh0f6f417fc78f2d0p1e6f7fjsnb288da84ee85',
+              'X-RapidAPI-Key': '08f57f0b32mshf78b5bdd8f6eadbp16b679jsn55072e2ace6f',
               'X-RapidAPI-Host': 'text-to-image7.p.rapidapi.com',
             }
           };
     
           try {
             for (let i = 0; i < 2; i++) {
-              const { furniture_color, furniture_style, furniture_type } = recommendations[i];
-              const { reason_for_suggestion } = recommendations[i];
+              // console.log(recommendations)
+              const { furniture_color, furniture_style, furniture_type } = data.result[i];
+              const { reason_for_suggestion } = data.result[i];
               const prompt = `${furniture_color} ${furniture_style} ${furniture_type}`;
               const reason = `${reason_for_suggestion}`;
               console.log(prompt)
@@ -69,13 +71,14 @@ const RecommendationCard = () => {
               if (!response.ok) {
                   throw new Error('Network response was not ok');
               }
-              const data = await response.json();
+              const datafur = await response.json();
               const furniture={
-                imgLink:data.data[0],
+                imgLink:datafur.data[0],
                 title: prompt,
                 desc : reason
               }
-              setfurnitureSuggestions([...furnitureSuggestions, furniture])
+              setfurnitureSuggestions(prevState => [...prevState, furniture]);
+              console.log(furnitureSuggestions)
           }
           } catch (error) {
            console.log(error);

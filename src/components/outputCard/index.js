@@ -8,12 +8,14 @@ import './style.css';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { border } from '@cloudinary/url-gen/qualifiers/background';
+import { center } from '@cloudinary/url-gen/qualifiers/textAlignment';
 
 const OutputCard = ({furnitureSuggestions}) => {
   console.log("furnitureSuggestions"+ furnitureSuggestions)
     return (
         <div className='main'>
         <h2>Recommended Furniture Pieces</h2>
+        <div style={{display: 'flex', flexDirection: 'row', gap: '8px', justifyContent: "center", alignItems: 'center', padding: '14px'}}>
         {
             furnitureSuggestions?.map((item)=>{
                 return <Card  style={{ width: '18rem' }}>
@@ -27,6 +29,7 @@ const OutputCard = ({furnitureSuggestions}) => {
             </Card>
             })
         }
+        </div>
         </div>
     );
 };
